@@ -1,0 +1,81 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "image": "https://example.com/the-silent-patient.jpg",
+      "review": "A gripping psychological thriller that keeps you hooked until the last page.",
+      "totalPages": 336,
+      "rating": 4.5,
+      "category": "Fiction",
+      "tags": ["Suspense", "Psychological", "Thriller"],
+      "publisher": "Celadon Books",
+      "yearOfPublishing": 2019
+    },
+    {
+      "bookId": 2,
+      "bookName": "Educated",
+      "author": "Tara Westover",
+      "image": "https://example.com/educated.jpg",
+      "review": "An inspiring memoir about the transformative power of education and self-discovery.",
+      "totalPages": 352,
+      "rating": 4.7,
+      "category": "Memoir",
+      "tags": ["Biography", "Inspirational"],
+      "publisher": "Random House",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 3,
+      "bookName": "Becoming",
+      "author": "Michelle Obama",
+      "image": "https://example.com/becoming.jpg",
+      "review": "A deeply personal and inspiring account of Michelle Obama's journey from the South Side of Chicago to the White House.",
+      "totalPages": 448,
+      "rating": 4.8,
+      "category": "Biography",
+      "tags": ["Inspirational", "Political", "Memoir"],
+      "publisher": "Crown Publishing Group",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 4,
+      "bookName": "The Midnight Library",
+      "author": "Matt Haig",
+      "image": "https://example.com/the-midnight-library.jpg",
+      "review": "A thought-provoking novel about the infinite possibilities of life and the choices we make.",
+      "totalPages": 304,
+      "rating": 4.3,
+      "category": "Fiction",
+      "tags": ["Fantasy", "Philosophical", "Contemporary"],
+      "publisher": "Canongate Books",
+      "yearOfPublishing": 2020
+    },
+    {
+      "bookId": 5,
+      "bookName": "Where the Crawdads Sing",
+      "author": "Delia Owens",
+      "image": "https://example.com/where-the-crawdads-sing.jpg",
+      "review": "A beautifully written tale of love, survival, and the mysteries of nature.",
+      "totalPages": 384,
+      "rating": 4.6,
+      "category": "Mystery",
+      "tags": ["Romance", "Nature", "Crime"],
+      "publisher": "G.P. Putnam's Sons",
+      "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 6,
+      "bookName": "Atomic Habits",
+      "author": "James Clear",
+      "image": "https://example.com/atomic-habits.jpg",
+      "review": "A practical guide to building good habits, breaking bad ones, and mastering the tiny behaviors that lead to remarkable results.",
+      "totalPages": 320,
+      "rating": 4.9,
+      "category": "Self-Help",
+      "tags": ["Productivity", "Behavioral", "Psychology"],
+      "publisher": "Avery",
+      "yearOfPublishing": 2018
+    }
+  ]
+  
