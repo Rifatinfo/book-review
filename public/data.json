@@ -76,6 +76,45 @@
       "tags": ["Productivity", "Behavioral", "Psychology"],
       "publisher": "Avery",
       "yearOfPublishing": 2018
+    },
+    {
+      "bookId": 7,
+      "bookName": "Sapiens: A Brief History of Humankind",
+      "author": "Yuval Noah Harari",
+      "image": "https://example.com/sapiens.jpg",
+      "review": "A compelling exploration of the history and impact of Homo sapiens on the world, from prehistoric times to the modern age.",
+      "totalPages": 464,
+      "rating": 4.7,
+      "category": "Non-Fiction",
+      "tags": ["History", "Anthropology", "Science"],
+      "publisher": "Harper",
+      "yearOfPublishing": 2015
+    },
+    {
+      "bookId": 8,
+      "bookName": "The Alchemist",
+      "author": "Paulo Coelho",
+      "image": "https://example.com/the-alchemist.jpg",
+      "review": "A timeless story about following your dreams, listening to your heart, and discovering your personal legend.",
+      "totalPages": 208,
+      "rating": 4.6,
+      "category": "Fiction",
+      "tags": ["Philosophical", "Adventure", "Inspirational"],
+      "publisher": "HarperOne",
+      "yearOfPublishing": 1988
+    },
+    {
+      "bookId": 9,
+      "bookName": "The Subtle Art of Not Giving a F*ck",
+      "author": "Mark Manson",
+      "image": "https://example.com/the-subtle-art.jpg",
+      "review": "A no-nonsense guide to living a good life, challenging conventional wisdom about what it means to be happy and successful.",
+      "totalPages": 224,
+      "rating": 4.3,
+      "category": "Self-Help",
+      "tags": ["Personal Development", "Psychology", "Motivational"],
+      "publisher": "Harper",
+      "yearOfPublishing": 2016
     }
   ]
   
