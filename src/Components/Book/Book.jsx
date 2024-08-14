@@ -1,4 +1,4 @@
-
+import placeholderImage from '../../assets/404.jpg'
 const Book = ({ book }) => {
     const { tags, author, image, rating, publisher, bookName } = book;
     return (
@@ -6,7 +6,7 @@ const Book = ({ book }) => {
             <div className="card bg-base-100 w-96 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img
-                        src={image}
+                        src={image || placeholderImage}
                         alt="Shoes"
                         className="rounded-xl" />
                 </figure>
