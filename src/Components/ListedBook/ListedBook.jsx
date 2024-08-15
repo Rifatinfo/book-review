@@ -1,9 +1,8 @@
 
-const ListedBook = ({listedBook}) => {
-    const {bookId} = listedBook;
+const ListedBook = () => {
     return (
         <div>
-            <h1>{bookId}</h1>
+            
         </div>
     );
 };
