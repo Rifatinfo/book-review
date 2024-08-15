@@ -1,10 +1,27 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import placeholderImage from "../../assets/404.jpg";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveReadCart } from "../../utility/localStroage";
+
+
 
 const BookDetail = () => {
   const bookList = useLoaderData();
   const { bookId } = useParams();
   const book = bookList.find((book) => book.bookId === parseInt(bookId));
+
+
+  const handleApplyRead = () => {
+    const isSuccess = saveReadCart(parseInt(bookId));
+    
+    if (isSuccess) {
+        toast.success('Add To Read Successfully');
+    } else {
+        toast.error('Already BookMarked');
+    }
+  }
+
   return (
     <div className="min-h-[calc(100vh-200px)] mt-5">
       <div className="lg:flex lg:gap-3 grid grid-cols-1">
@@ -40,7 +57,7 @@ const BookDetail = () => {
             <p>Year of Publishing: {book.yearOfPublishing}</p>
           </div>
           <div className="flex gap-4">
-            <a className="btn bg-[#23BE0A] text-white">Read</a>
+            <a onClick={handleApplyRead} className="btn bg-[#23BE0A] text-white">Read</a>
             <a className="btn bg-[#59C6D2] text-white">Wishlist</a>
           </div>
         </div>
