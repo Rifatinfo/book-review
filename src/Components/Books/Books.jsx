@@ -3,7 +3,7 @@ import Book from "../Book/Book";
 
 const Books = () => {
     const bookList = useLoaderData();
-    console.log(bookList);
+    // console.log(bookList);
     return (
         <div>
             <div className="mt-4">
@@ -11,7 +11,7 @@ const Books = () => {
             </div>
             <div className="grid lg:grid-cols-3 grid-cols-1 gap-3 mt-3">
                 {
-                    bookList.map(book => <Book key={book.id} book={book}></Book>)
+                    bookList.map(book => <Book key={book.bookId} book={book}></Book>)
                 }
             </div>
         </div>

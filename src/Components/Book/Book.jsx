@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
 import placeholderImage from "../../assets/404.jpg";
 import { FaRegStar } from "react-icons/fa6";
 
 const Book = ({ book }) => {
-  const { tags, author, image, rating, publisher, bookName ,category} = book;
+  const {bookId ,tags, author, image, rating, bookName ,category} = book;
   return (
     <div>
-      <div className="card bg-base-100 h-[482px] shadow-xl p-6">
+
+      <Link  to={`/${bookId}`} className="card bg-base-100 h-[482px] shadow-xl p-6">
         <figure className="px-10 pt-10">
           <img
             src={image || placeholderImage}
@@ -33,9 +35,9 @@ const Book = ({ book }) => {
                     <p><FaRegStar /></p>
                 </div>
             </div>
-        </div>
-            
-        </div>
+        </div>        
+      </Link>
+      {/* cart close */}
     </div>
   );
 };
