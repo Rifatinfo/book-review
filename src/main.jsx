@@ -1,7 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { ToastContainer } from 'react-toastify';
+
+import { Toaster } from 'react-hot-toast';
 
 import {
   createBrowserRouter,
@@ -37,7 +38,8 @@ const router = createBrowserRouter([
          },
          {
           path:"wishList",
-          element:<WishlistBooks></WishlistBooks>
+          element:<WishlistBooks></WishlistBooks>,
+          loader : () => fetch('data.json')
          }
         ]
       },
@@ -58,6 +60,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
-    <ToastContainer />
+ 
+    <Toaster></Toaster>
   </StrictMode>,
 )

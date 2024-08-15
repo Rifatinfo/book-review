@@ -1,6 +1,6 @@
 
-
-const WishlistBooks = () => {
+const WishlistBooks = ({listedBook}) => {
+   
     return (
         <div>
             <h1>oaifgjaioprwfjeiprgj</h1>

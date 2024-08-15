@@ -3,6 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { getStoredReadCart } from "../../utility/localStroage";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import ListedBook from "../ListedBook/ListedBook";
+import WishlistBooks from "../WhishList/WishlistBooks";
 
 
 
@@ -11,7 +12,7 @@ const ListedBooks = () => {
 
     const [appliedBooks, setAppliedBook] = useState([]);
     const [tabIndex,setTabIndex] = useState(0);
-    // const [wishListBooks, setWishListBooks] = useState([]);
+    const [wishListBooks, setWishListBooks] = useState([]);
 
     useEffect(() => {
         const storedBookId = getStoredReadCart();
@@ -20,6 +21,7 @@ const ListedBooks = () => {
             //    const ListedBook = bookList.filter(book => storedBookId === (book.bookId));
             //    console.log(bookList,ListedBook,storedBookId);
             setAppliedBook(ListedBook);
+            setWishListBooks(ListedBook);
         }
     }, [bookList])
     return (
@@ -65,11 +67,10 @@ const ListedBooks = () => {
                 </>
             ) : (
                 <>
-                <h1>iofjerwiofjriofj</h1>
-                    {/* <h1>Wishlist Books : {wishListBooks.length}</h1> */}
-                    {/* {wishListBooks.map(listedBook => (
-                        <ListedBook key={listedBook.bookId} listedBook={listedBook} />
-                    ))} */}
+                    <h1>Wishlist Books : {wishListBooks.length}</h1>
+                     {wishListBooks.map(listedBook => (
+                        <WishlistBooks key={listedBook.bookId} listedBook={listedBook}></WishlistBooks>
+                    ))}
                 </>
             )}
         </div>
