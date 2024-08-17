@@ -29,11 +29,15 @@ const getBooks = () => {
 };
 
 // save
-const saveBook = bookId => {
-    const storeBooks = getBooks();
-    const isExist = storeBooks.find(b => b === bookId);
-    if (isExist) {
-        return false;
+const saveBook = (bookId) => {
+    const storeBooks = getBooks() || []; // Ensure storeBooks is an array
+    const storeReadCarts = getStoredReadCart() || []; // Ensure storeReadCarts is an array
+
+    const isInStoreBooks = storeBooks.find(b => b === bookId);
+    const isInStoreReadCarts = storeReadCarts.find(b => b === bookId);
+
+    if (isInStoreBooks || isInStoreReadCarts) {
+        return false; // The book is already in storeBooks or storeReadCarts
     } else {
         storeBooks.push(bookId); // Add the new bookId to the array
         localStorage.setItem('books', JSON.stringify(storeBooks)); // Save the updated array to localStorage
@@ -41,13 +45,6 @@ const saveBook = bookId => {
     }
 };
 
-// delete
-// export const deleteBook = bookId =>{
-// let books = getBooks();
-// const remaining = books.filter(b => b.bookId !== bookId);
-// localStorage.setItem('books',JSON.stringify(remaining));
-// toast.success('Remove From WishList');
-// }
 
 export { getStoredReadCart, saveReadCart , getBooks, saveBook}
 
