@@ -13,6 +13,29 @@ const ListedBooks = () => {
     const [appliedBooks, setAppliedBook] = useState([]);
     const [tabIndex,setTabIndex] = useState(0);
     const [wishListBooks, setWishListBooks] = useState([]);
+    const [displayFilter, setDisplayFilter] = useState([]);
+
+    const handleFilter = filter =>{
+        if(filter === 'All'){
+            setDisplayFilter([...appliedBooks, ...wishListBooks]);
+        }
+        else if(filter === 'Rating'){
+           const sortedApplication = appliedBooks.sort((a,b) => b.rating - a.rating);
+           const sortedWishListBooks = wishListBooks.sort((a,b) => b.rating - a.rating);
+           setDisplayFilter([...sortedApplication, ...sortedWishListBooks]);
+
+        }
+        else if(filter === 'Number of pages'){
+            const sortedApplication1 = appliedBooks.sort((a,b) => b.totalPages - a.totalPages);
+            const sortedWishListBooks1 = wishListBooks.sort((a,b) => b.totalPages - a.totalPages);
+            setDisplayFilter([...sortedApplication1, ...sortedWishListBooks1]);
+        }          
+        else if(filter === 'Publisher year'){
+            const sortedApplication2 = appliedBooks.sort((a,b) => b.yearOfPublishing - a.yearOfPublishing);
+            const sortedWishListBooks2 = wishListBooks.sort((a,b) => b.yearOfPublishing - a.yearOfPublishing);
+            setDisplayFilter([...sortedApplication2, ...sortedWishListBooks2]);
+        }          
+    }
 
     useEffect(() => {
         const storedBookId = getStoredReadCart();
@@ -24,6 +47,7 @@ const ListedBooks = () => {
             const wishListBook = bookList.filter(wish => storeWishListId.includes(wish.bookId));
             setAppliedBook(ListedBook);
             setWishListBooks(wishListBook);
+            setDisplayFilter(ListedBook,wishListBook);
         }
     }, [bookList])
     return (
@@ -35,9 +59,9 @@ const ListedBooks = () => {
                 <details className="dropdown">
                     <summary className="btn m-1 bg-[#23BE0A] text-white hover:text-black">Sort By <RiArrowDropDownLine className="text-3xl text-white hover:text-black" /></summary>
                     <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
-                        <li><a>Rating</a></li>
-                        <li><a>Number of pages</a></li>
-                        <li><a>Publisher year</a></li>
+                        <li onClick={() => handleFilter('Rating')}><a>Rating</a></li>
+                        <li onClick={() => handleFilter('Number of pages')}><a>Number of pages</a></li>
+                        <li onClick={() => handleFilter('Publisher year')}><a>Publisher year</a></li>
                     </ul>
                 </details>
             </div>
