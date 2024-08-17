@@ -26,7 +26,7 @@ const BookDetail = () => {
     if (isSuccessBook) {
         toast.success('Successfully added to Wishlist');
     } else {
-        return toast.error('Already Added to Wishlist');
+       toast.error('Already Added to Wishlist');
     }
 };
 

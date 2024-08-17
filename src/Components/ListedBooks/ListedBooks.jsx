@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { getStoredReadCart } from "../../utility/localStroage";
+import { getBooks, getStoredReadCart } from "../../utility/localStroage";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import ListedBook from "../ListedBook/ListedBook";
 import WishlistBooks from "../WhishList/WishlistBooks";
@@ -16,12 +16,14 @@ const ListedBooks = () => {
 
     useEffect(() => {
         const storedBookId = getStoredReadCart();
+        const storeWishListId =  getBooks()
         if (bookList.length > 0) {
             const ListedBook = bookList.filter(book => storedBookId.includes(book.bookId));
             //    const ListedBook = bookList.filter(book => storedBookId === (book.bookId));
             //    console.log(bookList,ListedBook,storedBookId);
+            const wishListBook = bookList.filter(wish => storeWishListId.includes(wish.bookId));
             setAppliedBook(ListedBook);
-            setWishListBooks(ListedBook);
+            setWishListBooks(wishListBook);
         }
     }, [bookList])
     return (
@@ -60,16 +62,16 @@ const ListedBooks = () => {
               {/* Render content based on tabIndex */}
               {tabIndex === 0 ? (
                 <>
-                    <h1>Read Books : {appliedBooks.length}</h1>
+                    <h1 className="font-semibold">Read Books : {appliedBooks.length}</h1>
                     {appliedBooks.map(listedBook => (
                         <ListedBook key={listedBook.bookId} listedBook={listedBook} />
                     ))}
                 </>
             ) : (
                 <>
-                    <h1>Wishlist Books : {wishListBooks.length}</h1>
-                     {wishListBooks.map(listedBook => (
-                        <WishlistBooks key={listedBook.bookId} listedBook={listedBook}></WishlistBooks>
+                    <h1 className="font-semibold">Wishlist Books : {wishListBooks.length}</h1>
+                     {wishListBooks.map((listedBook,inx) => (
+                        <WishlistBooks key={inx} listedBook={listedBook}></WishlistBooks>
                     ))}
                 </>
             )}
