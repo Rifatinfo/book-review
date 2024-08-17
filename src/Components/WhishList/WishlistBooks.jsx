@@ -65,9 +65,9 @@ const WishlistBooks = ({ listedBook }) => {
         </div>
         <hr />
         <div>
-        <Link to="/listed-book"><button className="btn rounded-3xl bg-[#328EFF]  text-white" >Category: {category}</button></Link>
-        <Link to="/listed-book"><button className="btn rounded-3xl bg-[#FFAC33] text-white ">Rating: {rating}</button></Link>
-        <Link to="/listed-book"><button className="btn rounded-3xl bg-[#23BE0A] text-white" >View Details</button></Link>
+        <Link><button className="btn rounded-3xl bg-[#328EFF]  text-white" >Category: {category}</button></Link>
+        <Link><button className="btn rounded-3xl bg-[#FFAC33] text-white ">Rating: {rating}</button></Link>
+        <Link><button className="btn rounded-3xl bg-[#23BE0A] text-white" >View Details</button></Link>
         </div>
       </div>
     </div>
