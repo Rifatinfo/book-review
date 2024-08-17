@@ -22,7 +22,7 @@ function CustomTooltip({payload, active}) {
     if (active) {
         return (
             <div className="custom-tooltip">
-                <p className="desc">total Page : {`${payload[0].value}`}</p>
+                <p className="desc text-red-500">total Page : {`${payload[0].value}`}</p>
             </div>
         );
     }

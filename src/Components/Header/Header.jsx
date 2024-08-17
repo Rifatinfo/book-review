@@ -6,6 +6,7 @@ const Header = () => {
             <li><NavLink className={({ isActive }) => isActive ? "text-[#23BE0A] border border-green-500" : "font-semibold "} to="/">Home</NavLink></li>
             <li><NavLink className={({ isActive }) => isActive ? "text-[#23BE0A] border border-green-500" : "font-semibold "} to="/listed-book">Listed Books</NavLink></li>
             <li><NavLink className={({ isActive }) => isActive ? "text-[#23BE0A] border border-green-500" : "font-semibold "} to="/pages-to-read">Pages to Read</NavLink></li>
+            <li><NavLink className={({ isActive }) => isActive ? "text-[#23BE0A] border border-green-500" : "font-semibold "} to="/book-review">Book Review</NavLink></li>
         </>
     )
 
